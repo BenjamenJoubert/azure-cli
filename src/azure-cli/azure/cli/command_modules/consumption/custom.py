@@ -75,7 +75,7 @@ class ConsumptionUsageList(_ConsumptionUsageList):
         if has_value(args.start_date) and has_value(args.end_date):
             start_date = datetime_type(args.start_date.to_serialized_data())
             end_date = datetime_type(args.end_date.to_serialized_data())
-            filter_from = "properties/usageEnd ge \'{}\'".format(start_date.strftime("%Y-%m-%dT%H:%M:%SZ"))
+            filter_from = "properties/usageStart ge \'{}\'".format(start_date.strftime("%Y-%m-%dT%H:%M:%SZ"))
             filter_to = "properties/usageEnd le \'{}\'".format(end_date.strftime("%Y-%m-%dT%H:%M:%SZ"))
             args.filter = "{} and {}".format(filter_from, filter_to)
 
